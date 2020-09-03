@@ -1,0 +1,27 @@
+.Task {
+  border: black;
+  border-style: dotted;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: black;
+  font-family: fantasy;
+  width: 500px;
+  height: fit-content;
+}
+
+#task-content {
+  display: inline-block;
+  word-wrap: break-word;
+  width: 75%;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#task-actions {
+  display: inline-block;
+}
