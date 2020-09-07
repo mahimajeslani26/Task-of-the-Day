@@ -2,6 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import '../style/Task.css';
 import Draggable from 'react-draggable';
+import { List, ListItem, ListItemText } from '@material-ui/core';
 
 function Task(props) {
   const taskStyle = {
@@ -11,9 +12,14 @@ function Task(props) {
   return (
     <Draggable handle='#task-content'>
       <div className='Task' style={taskStyle}>
-        <div id='task-content'>
-          <ReactMarkdown source={props.task.detail} escapeHtml={false} />
-        </div>
+        <List>
+          <ListItem>
+            <ListItemText
+              primary={props.task.isDone ? 'Complete' : 'ToDo'}
+              secondary={props.task.detail}
+            />
+          </ListItem>
+        </List>
 
         <div id='task-actions'>
           {props.task.isDone ? null : (
@@ -36,6 +42,7 @@ function Task(props) {
                 value='Edit'
                 onClick={() => props.handleSelectTask(props.taskId)}
               />
+
               <br />
             </div>
           )}
